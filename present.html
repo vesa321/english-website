@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Present Tenses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="present.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: #feece5;
+            color: #666;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #91300e;
+            color: #feece5;
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .cards-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+            cursor: pointer;
+            position: relative;
+            animation: floatCard 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background: #91300e;
+            color: #feece5;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #91300e;
+            color: #feece5;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            .card-body {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card-header {
+                font-size: 1.3rem;
+            }
+
+            .card-body {
+                font-size: 0.95rem;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="foto" id="foto">
+        <div class="menu">
+            <div class="logo">
+                <a href="" class="logonje">
+                    <h1>English<i>grammar</i></h1>
+                </a>
+                <div class="menu-links">
+                    <a href="home.html">Home Page</a>
+                    <a href="#per">About Us</a>
+                    <div class="dropdown">
+                        <a href="pages.html" class="dropbtn">Pages ▼</a>
+                        <div class="dropdown-content">
+                            <a href="speech.html">Parts of speech</a>
+                            <a href="home.html #tensat">Tenses</a>
+                            <a href="conditional.html">Conditional Sentences</a>
+                            <a href="passive.html">Passive voice</a>
+                            <a href="active.html">Active voice</a>
+                            <a href="questions.html">Questions and negatives</a>
+                        </div>
+                    </div>
+                    <a href="home.html #per">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <h1>Present Tenses</h1>
+        <p>Living in the moment ✨</p>
+    </header>
+
+    <section class="cards-section" id="cards">
+        <div class="card">
+            <div class="card-header">Simple Present</div>
+            <div class="card-body">
+                <p>I eat breakfast every morning.</p>
+                <p><strong>Usage:</strong> Regular habits, facts, universal truths.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Present Continuous</div>
+            <div class="card-body">
+                <p>She is studying for her exams.</p>
+                <p><strong>Usage:</strong> Actions happening right now or temporary situations.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Present Perfect</div>
+            <div class="card-body">
+                <p>They have finished their homework.</p>
+                <p><strong>Usage:</strong> Actions completed recently or affecting the present.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Present Perfect Continuous</div>
+            <div class="card-body">
+                <p>We have been waiting for an hour.</p>
+                <p><strong>Usage:</strong> Actions that started in the past and continue to now.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Language Spark | Inspired Learning 🌟
+    </footer>
+
+    <script>
+        // Animate cards on scroll
+        const cards = document.querySelectorAll('.card');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < windowHeight - 100) {
+                    card.style.animation = "floatCard 1s ease-out forwards";
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Initial animation check
+        revealOnScroll();
+    </script>
+
+</body>
+
+</html>

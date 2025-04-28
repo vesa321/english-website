@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Sentences</title>
+    <link rel="stylesheet" href="conditional.css">
+</head>
+<!-- Back to Top Button -->
+<button id="backToTop">↑ Top</button>
+
+<body>
+    <div class="foto" id="foto">
+        <div class="menu">
+            <div class="logo">
+                <a href="" class="logonje">
+                    <h1>English<i>grammar</i></h1>
+                </a>
+                <div class="menu-links">
+                    <a href="home.html">Home Page</a>
+                    <a href="#per">About Us</a>
+                    <div class="dropdown">
+                        <a href="pages.html" class="dropbtn">Pages ▼</a>
+                        <div class="dropdown-content">
+                            <a href="speech.html">Parts of speech</a>
+                            <a href="home.html #tensat">Tenses</a>
+                            <a href="conditional.html">Conditional Sentences</a>
+                            <a href="passive.html">Passive voice</a>
+                            <a href="active.html">Active voice</a>
+                            <a href="questions.html">Questions and negatives</a>
+                        </div>
+                    </div>
+                    <a href="home.html #per">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <h1>Conditional Sentences in English</h1>
+        <p>Understand how to express real and unreal situations!</p>
+    </header>
+
+    <section class="cards-container">
+        <div class="card">
+            <h2>Zero Conditional</h2>
+            <p><strong>Form:</strong> If + Present Simple, Present Simple<br>
+            <strong>Use:</strong> Facts, general truths.<br>
+            <strong>Example:</strong> If you heat water, it boils.</p>
+        </div>
+
+        <div class="card">
+            <h2>First Conditional</h2>
+            <p><strong>Form:</strong> If + Present Simple, Will + Base Verb<br>
+            <strong>Use:</strong> Real future possibilities.<br>
+            <strong>Example:</strong> If it rains, we will stay home.</p>
+        </div>
+
+        <div class="card">
+            <h2>Second Conditional</h2>
+            <p><strong>Form:</strong> If + Past Simple, Would + Base Verb<br>
+            <strong>Use:</strong> Unreal or unlikely present/future situations.<br>
+            <strong>Example:</strong> If I won the lottery, I would travel the world.</p>
+        </div>
+
+        <div class="card">
+            <h2>Third Conditional</h2>
+            <p><strong>Form:</strong> If + Past Perfect, Would Have + Past Participle<br>
+            <strong>Use:</strong> Unreal past situations (regrets).<br>
+            <strong>Example:</strong> If she had studied harder, she would have passed the exam.</p>
+        </div>
+
+        <div class="card">
+            <h2>Mixed Conditional</h2>
+            <p><strong>Form:</strong> Different tenses in 'if' and main clause<br>
+            <strong>Use:</strong> Linking past condition to present result.<br>
+            <strong>Example:</strong> If I had taken that job, I would be rich now.</p>
+        </div>
+    </section>
+    <section class="exercise-section">
+        <h2>Practice Exercises</h2>
+    
+        <!-- Exercise 1 -->
+        <div class="exercise">
+            <p>1. If it rains, we __________ (stay) home.</p>
+            <button class="answer" data-correct="false">stayed</button>
+            <button class="answer" data-correct="true">will stay</button>
+            <button class="answer" data-correct="false">have stayed</button>
+        </div>
+    
+        <!-- Exercise 2 -->
+        <div class="exercise">
+            <p>2. If she had studied harder, she __________ (pass) the exam.</p>
+            <button class="answer" data-correct="true">would have passed</button>
+            <button class="answer" data-correct="false">will pass</button>
+            <button class="answer" data-correct="false">would pass</button>
+        </div>
+    
+        <!-- Exercise 3 -->
+        <div class="exercise">
+            <p>3. If I __________ (win) the lottery, I would travel the world.</p>
+            <button class="answer" data-correct="false">won</button>
+            <button class="answer" data-correct="true">won</button>
+            <button class="answer" data-correct="false">had won</button>
+        </div>
+    
+        <div id="score"></div>
+    </section>
+    
+    <footer class="footer">
+        <p>Made with ❤️ for English learners!</p>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+        const cards = document.querySelectorAll('.card');
+    
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('show');
+                    }, index * 150);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+    
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    
+        // --- Back to Top Button ---
+        const backToTopButton = document.getElementById('backToTop');
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+    
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Exercise functionality
+const answers = document.querySelectorAll('.answer');
+const scoreDisplay = document.getElementById('score');
+let score = 0;
+
+answers.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const isCorrect = event.target.dataset.correct === 'true';
+
+        if (isCorrect) {
+            event.target.style.backgroundColor = '#4CAF50'; // Green for correct
+            score++;
+        } else {
+            event.target.style.backgroundColor = '#F44336'; // Red for incorrect
+        }
+
+        // Disable all buttons for the current exercise after an answer is selected
+        const exercise = event.target.closest('.exercise');
+        const buttons = exercise.querySelectorAll('button');
+        buttons.forEach(btn => btn.disabled = true);
+
+        // Display the current score
+        scoreDisplay.textContent = `Your score: ${score} / 3`;
+    });
+});
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions and Negatives - Practice</title>
+    <link rel="stylesheet" href="questions.css">
+</head>
+<body>
+    <div class="foto" id="foto">
+        <div class="menu">
+            <div class="logo">
+                <a href="" class="logonje">
+                    <h1>English<i>grammar</i></h1>
+                </a>
+                <div class="menu-links">
+                    <a href="home.html">Home Page</a>
+                    <a href="#per">About Us</a>
+                    <div class="dropdown">
+                        <a href="pages.html" class="dropbtn">Pages ▼</a>
+                        <div class="dropdown-content">
+                            <a href="speech.html">Parts of speech</a>
+                            <a href="home.html #tensat">Tenses</a>
+                            <a href="conditional.html">Conditional Sentences</a>
+                            <a href="passive.html">Passive voice</a>
+                            <a href="active.html">Active voice</a>
+                            <a href="questions.html">Questions and negatives</a>
+                        </div>
+                    </div>
+                    <a href="home.html #per">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p id="loadingText">Loading</p>
+    </div>
+
+    <!-- Main Content -->
+    <header class="header">
+        <h1 class="main-title">Questions and Negatives in English</h1>
+        <p>Learn, practice, and improve your English skills!</p>
+    </header>
+
+    <section class="cards-container">
+        <div class="card">
+            <h2>What are Questions?</h2>
+            <p>In English, questions usually start with an auxiliary verb (do, does, are, is) or a Wh- word (what, where, why). <br><strong>Example:</strong> <em>Do you like football?</em></p>
+        </div>
+
+        <div class="card">
+            <h2>What are Negatives?</h2>
+            <p>Negatives are made by adding 'not' to auxiliary verbs.<br><strong>Example:</strong> <em>She does not (doesn't) like pizza.</em></p>
+        </div>
+
+        <div class="card">
+            <h2>How to form Questions?</h2>
+            <p><strong>Rule:</strong> Auxiliary + Subject + Verb<br><strong>Example:</strong> Are you ready?</p>
+        </div>
+
+        <div class="card">
+            <h2>How to form Negatives?</h2>
+            <p><strong>Rule:</strong> Subject + Auxiliary + not + Verb<br><strong>Example:</strong> He is not (isn't) tired.</p>
+        </div>
+
+        <div class="card">
+            <h2>Common Mistakes</h2>
+            <p>❌ He don't like. <br>✅ He doesn't like. <br><br> ❌ Are she happy? <br>✅ Is she happy?</p>
+        </div>
+    </section>
+
+    <!-- Exercises -->
+    <section class="exercise-section">
+        <h2>📝 Practice Exercises</h2>
+
+        <div class="exercise">
+            <p>1. (he / like / music) → Make a question</p>
+            <input type="text" id="q1" placeholder="Type your answer...">
+            <button onclick="checkAnswer('q1', 'Does he like music?')">Check</button>
+            <span id="result1"></span>
+        </div>
+
+        <div class="exercise">
+            <p>2. (they / not / play / tennis) → Make a negative</p>
+            <input type="text" id="q2" placeholder="Type your answer...">
+            <button onclick="checkAnswer('q2', 'They do not play tennis.')">Check</button>
+            <span id="result2"></span>
+        </div>
+
+        <div class="exercise">
+            <p>3. (she / be / happy) → Make a question</p>
+            <input type="text" id="q3" placeholder="Type your answer...">
+            <button onclick="checkAnswer('q3', 'Is she happy?')">Check</button>
+            <span id="result3"></span>
+        </div>
+
+        <div class="exercise">
+            <p>4. (we / not / eat / meat) → Make a negative</p>
+            <input type="text" id="q4" placeholder="Type your answer...">
+            <button onclick="checkAnswer('q4', 'We do not eat meat.')">Check</button>
+            <span id="result4"></span>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <p>Made with ❤️ for English learners!</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop">↑ Top</button>
+
+    <script src="questions.js"></script>
+</body>
+</html>
+

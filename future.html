@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Future Tenses Easily!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="present.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: #feece5;
+            color: #666;
+            overflow-x: hidden;
+            padding-bottom: 3rem;
+        }
+
+        header {
+            background-color: #91300e;
+            color: #feece5;
+            padding: 2rem 1rem;
+            text-align: center;
+            animation: bounceDown 1s;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            width: 280px;
+            min-height: 250px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card:hover {
+            background-color: #91300e;
+            color: #feece5;
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .example {
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+
+        .explanation {
+            display: none;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .card.show .explanation {
+            display: block;
+            animation: fadeIn 0.6s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #91300e;
+            color: #feece5;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 4rem;
+        }
+
+        @keyframes bounceDown {
+            0% {
+                transform: translateY(-200px);
+            }
+
+            60% {
+                transform: translateY(30px);
+            }
+
+            80% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ✅ Responsive Design */
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+                gap: 1.5rem;
+            }
+
+            .card {
+                width: 220px;
+                min-height: 230px;
+                padding: 1.2rem;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                max-width: 350px;
+                padding: 1rem;
+            }
+
+            .example {
+                font-size: 0.95rem;
+            }
+
+            .explanation {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="foto" id="foto">
+        <div class="menu">
+            <div class="logo">
+                <a href="" class="logonje">
+                    <h1>English<i>grammar</i></h1>
+                </a>
+                <div class="menu-links">
+                    <a href="home.html">Home Page</a>
+                    <a href="#per">About Us</a>
+                    <div class="dropdown">
+                        <a href="pages.html" class="dropbtn">Pages ▼</a>
+                        <div class="dropdown-content">
+                            <a href="speech.html">Parts of speech</a>
+                            <a href="home.html #tensat">Tenses</a>
+                            <a href="conditional.html">Conditional Sentences</a>
+                            <a href="passive.html">Passive voice</a>
+                            <a href="active.html">Active voice</a>
+                            <a href="questions.html">Questions and negatives</a>
+                        </div>
+                    </div>
+                    <a href="home.html #per">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <h1>Learn Future Tenses!</h1>
+        <p>Easy and Fun 🎈</p>
+    </header>
+
+    <div class="container">
+        <div class="card" onclick="toggleExplanation(this)">
+            <h2>Simple Future</h2>
+            <div class="example">👉 I will call you later.</div>
+            <div class="explanation">We use this tense when we decide to do something in the future at the moment of
+                speaking.</div>
+        </div>
+
+        <div class="card" onclick="toggleExplanation(this)">
+            <h2>Future Continuous</h2>
+            <div class="example">👉 She will be sleeping at 10 PM.</div>
+            <div class="explanation">This tense shows that something will be happening at a specific time in the future.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleExplanation(this)">
+            <h2>Future Perfect</h2>
+            <div class="example">👉 They will have arrived by noon.</div>
+            <div class="explanation">We use this when we talk about something that will be finished before a time in the
+                future.</div>
+        </div>
+
+        <div class="card" onclick="toggleExplanation(this)">
+            <h2>Future Perfect Continuous</h2>
+            <div class="example">👉 I will have been working for 5 hours.</div>
+            <div class="explanation">This tense shows how long an action will have been happening before another future
+                event.</div>
+        </div>
+    </div>
+
+    <footer>
+        🌟 You are doing great! Keep going! 🌟
+    </footer>
+
+    <script>
+        function toggleExplanation(card) {
+            card.classList.toggle('show');
+        }
+    </script>
+
+</body>
+
+</html>

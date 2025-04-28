@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts of Speech</title>
+    <link rel="stylesheet" href="speech.css">
+</head>
+<body>
+    <div class="foto" id="foto">
+        <div class="menu">
+            <div class="logo">
+                <a href="" class="logonje">
+                    <h1>English<i>grammar</i></h1>
+                </a>
+                <div class="menu-links">
+                    <a href="home.html">Home Page</a>
+                    <a href="#per">About Us</a>
+                    <div class="dropdown">
+                        <a href="pages.html" class="dropbtn">Pages ▼</a>
+                        <div class="dropdown-content">
+                            <a href="speech.html">Parts of speech</a>
+                            <a href="home.html #tensat">Tenses</a>
+                            <a href="conditional.html">Conditional Sentences</a>
+                            <a href="passive.html">Passive voice</a>
+                            <a href="active.html">Active voice</a>
+                            <a href="questions.html">Questions and negatives</a>
+                        </div>
+                    </div>
+                    <a href="home.html #per">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <h1>Parts of Speech in English</h1>
+        <p>Learn the building blocks of English grammar!</p>
+    </header>
+
+    <section class="cards-container">
+        <div class="card">
+            <h2>Noun</h2>
+            <p>A word that names a person, place, thing, or idea.<br>Example: *dog*, *happiness*</p>
+        </div>
+
+        <div class="card">
+            <h2>Pronoun</h2>
+            <p>A word used instead of a noun.<br>Example: *he*, *she*, *it*</p>
+        </div>
+
+        <div class="card">
+            <h2>Verb</h2>
+            <p>A word that shows action or state of being.<br>Example: *run*, *is*</p>
+        </div>
+
+        <div class="card">
+            <h2>Adjective</h2>
+            <p>A word that describes a noun or pronoun.<br>Example: *happy*, *blue*</p>
+        </div>
+
+        <div class="card">
+            <h2>Adverb</h2>
+            <p>A word that describes a verb, adjective, or another adverb.<br>Example: *quickly*, *very*</p>
+        </div>
+
+        <div class="card">
+            <h2>Preposition</h2>
+            <p>Shows relationship between a noun (or pronoun) and other words.<br>Example: *in*, *on*, *at*</p>
+        </div>
+
+        <div class="card">
+            <h2>Conjunction</h2>
+            <p>A word that connects words, phrases, or clauses.<br>Example: *and*, *but*, *or*</p>
+        </div>
+
+        <div class="card">
+            <h2>Interjection</h2>
+            <p>A word that expresses strong emotion.<br>Example: *Wow!*, *Oh!*</p>
+        </div>
+    </section>
+
+    <section class="exercise-section">
+        <h2>Exercises: Identify the Part of Speech</h2>
+        <p id="score" style="font-size: 22px; color: #91300e; margin-bottom: 20px;">Score: 0/3</p>
+
+        <div class="exercise">
+            <p>1. She is a *beautiful* singer. What part of speech is *beautiful*?</p>
+            <button onclick="checkAnswer(this, 'Adjective')">Noun</button>
+            <button onclick="checkAnswer(this, 'Adjective')">Adjective</button>
+            <button onclick="checkAnswer(this, 'Adjective')">Verb</button>
+            <button onclick="checkAnswer(this, 'Adjective')">Pronoun</button>
+        </div>
+
+        <div class="exercise">
+            <p>2. They *are* going to the park tomorrow. What part of speech is *are*?</p>
+            <button onclick="checkAnswer(this, 'Verb')">Noun</button>
+            <button onclick="checkAnswer(this, 'Verb')">Adjective</button>
+            <button onclick="checkAnswer(this, 'Verb')">Verb</button>
+            <button onclick="checkAnswer(this, 'Verb')">Preposition</button>
+        </div>
+
+        <div class="exercise">
+            <p>3. *Wow!* That was amazing! What part of speech is *Wow!*?</p>
+            <button onclick="checkAnswer(this, 'Interjection')">Noun</button>
+            <button onclick="checkAnswer(this, 'Interjection')">Verb</button>
+            <button onclick="checkAnswer(this, 'Interjection')">Adverb</button>
+            <button onclick="checkAnswer(this, 'Interjection')">Interjection</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Made with ❤️ for English learners!</p>
+    </footer>
+
+    <script>
+        let score = 0;
+        let totalQuestions = 3; // You have 3 exercises
+        let answeredQuestions = 0;
+
+        function checkAnswer(button, correctAnswer) {
+            if (button.dataset.answered) return; // Don't allow second click
+
+            answeredQuestions++;
+            button.dataset.answered = true; // mark as answered
+
+            if (button.innerText === correctAnswer) {
+                button.style.backgroundColor = '#4CAF50'; // Green for correct
+                button.style.color = '#fff';
+                score++;
+            } else {
+                button.style.backgroundColor = '#f44336'; // Red for wrong
+                button.style.color = '#fff';
+            }
+
+            // Disable all buttons in this exercise
+            const buttons = button.parentElement.querySelectorAll('button');
+            buttons.forEach(btn => btn.disabled = true);
+
+            updateScore();
+
+            if (answeredQuestions === totalQuestions) {
+                setTimeout(() => {
+                    alert(`Quiz Finished! Your score: ${score}/${totalQuestions}`);
+                }, 500);
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score').innerText = `Score: ${score}/${totalQuestions}`;
+        }
+
+        // Show cards with a fade-in effect
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('show');
+            }, index * 200); // Add a delay to each card
+        });
+
+        const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    </script>
+</body>
+</html>
